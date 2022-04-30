@@ -5,15 +5,15 @@ import Footer from "./Footer";
 import PopupWithForm from "./PopupWithForm";
 import ImagePopup from "./ImagePopup";
 
-function App(props) {
+function App() {
   const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = React.useState(
-    props.isOpen
+    false
   );
   const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = React.useState(
-    props.isOpen
+    false
   );
   const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = React.useState(
-    props.isOpen
+    false
   );
   const [selectedCard, setSelectedCard] = React.useState(null);
 
@@ -54,6 +54,7 @@ function App(props) {
         name="-avatar"
         title="Обновить аватар"
         isOpen={isEditAvatarPopupOpen}
+        button="Сохранить"
         onClose={closeAllPopups}
         children={
           <>
@@ -66,20 +67,15 @@ function App(props) {
               id="avatar-input"
             />
             <span className="popup__input-error avatar-input-error"></span>
-            <button className="popup__button" type="submit">
-              <span className="popup__button-text">Сохранить</span>
-            </button>
           </>
         }
       />
       <PopupWithForm
         name="_type_delete-card"
         title="Вы уверены?"
+        button="Да"
         children={
           <>
-            <button className="popup__button" type="submit">
-              <span className="popup__button-text">Да</span>
-            </button>
           </>
         }
       />
@@ -87,6 +83,7 @@ function App(props) {
         name="-image"
         title="Новое место"
         isOpen={isAddPlacePopupOpen}
+        button="Сохранить"
         onClose={closeAllPopups}
         children={
           <>
@@ -111,9 +108,6 @@ function App(props) {
               id="url-input"
             />
             <span className="popup__input-error url-input-error"></span>
-            <button className="popup__button" type="submit">
-              <span className="popup__button-text">Сохранить</span>
-            </button>
           </>
         }
       />
@@ -122,6 +116,7 @@ function App(props) {
         title="Редактировать профиль"
         isOpen={isEditProfilePopupOpen}
         onClose={closeAllPopups}
+        button="Сохранить"
         children={
           <>
             <input
@@ -147,9 +142,6 @@ function App(props) {
               id="job-input"
             />
             <span className="popup__input-error job-input-error"></span>
-            <button className="popup__button" type="submit">
-              <span className="popup__button-text">Сохранить</span>
-            </button>
           </>
         }
       />

@@ -1,95 +1,76 @@
 export class Api {
-  constructor({ baseUrl,  headers}) {
+  constructor({ baseUrl, headers }) {
     this.baseUrl = baseUrl;
     this.headers = headers;
   }
 
-  _makeRequest(path, method, {...body}) {
+  _makeRequest(path, method, body) {
     return fetch(this.baseUrl + path, {
-      method: method || 'GET',
+      method: method || "GET",
       headers: this.headers,
-      ...body
-    })
-      .then(res => {
-        if(res.ok) { return res.json() }
+      ...body,
+    }).then((res) => {
+      if (res.ok) {
+        return res.json();
+      }
 
-        return Promise.reject(res.status);
-      })
-  };
-
-  // getProfile() {
-  //   return this._makeRequest('/users/me')
-  // }
+      return Promise.reject(res.status);
+    });
+  }
 
   getProfile() {
-    return fetch(`${this.baseUrl}/users/me` , {
-      headers: this.headers
-    })
-    .then(res => res.ok ? res.json() : Promise.reject(res.status))
-    .catch(console.log)
+    return this._makeRequest('/users/me')
   }
-
-  // getInitialCards() {
-  //   return this._makeRequest('/cards')
-  // }
 
   getInitialCards() {
-
-    return fetch(`${this.baseUrl}/cards` , {
-
-      headers: this.headers
-
-    }).then(res => res.ok ? res.json() : Promise.reject(res.status))
-
-    .catch(console.log)
-
+    return this._makeRequest('/cards')
   }
-  
+
   editProfile(name, about) {
-    return this._makeRequest('/users/me', "PATCH", {
+    return this._makeRequest("/users/me", "PATCH", {
       body: JSON.stringify({
-      name: name,
-      about: about,
-    })
-  })
+        name: name,
+        about: about,
+      }),
+    });
   }
 
   addCard(name, link) {
-    return this._makeRequest('/cards', "POST", {
+    return this._makeRequest("/cards", "POST", {
       body: JSON.stringify({
-      name: name,
-      link: link,
-    })
-  })
+        name: name,
+        link: link,
+      }),
+    });
   }
 
   deleteCard(id) {
-    return this._makeRequest(`/cards/${id}`, "DELETE")
+    return this._makeRequest(`/cards/${id}`, "DELETE");
   }
 
   deleteLike(id) {
-    return this._makeRequest(`/cards/${id}/likes`, "DELETE")
+    return this._makeRequest(`/cards/${id}/likes`, "DELETE");
   }
 
   addLike(id) {
-    return this._makeRequest(`/cards/${id}/likes`, "PUT")
+    return this._makeRequest(`/cards/${id}/likes`, "PUT");
   }
 
   resetAvatar(avatarPhoto) {
-    return this._makeRequest('/users/me/avatar', "PATCH", {
+    return this._makeRequest("/users/me/avatar", "PATCH", {
       body: JSON.stringify({
-      avatar: avatarPhoto,
-    })
-  })
+        avatar: avatarPhoto,
+      }),
+    });
   }
 }
 
 const api = new Api({
-  baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-39',
+  baseUrl: "https://mesto.nomoreparties.co/v1/cohort-39",
   headers: {
-    authorization: 'edcdf9ce-a80f-4960-87f2-b6b93e17bf9b',
-    'Content-Type': 'application/json'
-  }
+    authorization: "edcdf9ce-a80f-4960-87f2-b6b93e17bf9b",
+    "Content-Type": "application/json",
+  },
 });
 
 export default api;

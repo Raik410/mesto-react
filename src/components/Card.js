@@ -7,7 +7,7 @@ function Card({ card, onCardClick }) {
       <button className="card__button-card-detele"></button>
       <img
         className="card__image"
-        alt="Карачаевск"
+        alt={card.name}
         src={card.link}
         width="100%"
         onClick={handleCardClick}
