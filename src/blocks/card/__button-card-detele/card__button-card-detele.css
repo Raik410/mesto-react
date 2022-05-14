@@ -11,3 +11,7 @@
   background-color: transparent;
   cursor: pointer;
 }
+
+.card__button-card-detele-hidden {
+  display: none;
+}
