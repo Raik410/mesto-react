@@ -22,9 +22,11 @@ function App() {
     const isLiked = card.likes.some(i => i._id === currentUser._id);
 
     // Отправляем запрос в API и получаем обновлённые данные карточки
-    api.changeLikeCardStatus(card._id, !isLiked).then((newCard) => {
+    api.changeLikeCardStatus(card._id, !isLiked)
+    .then((newCard) => {
         setCards((state) => state.map((c) => c._id === card._id ? newCard : c));
-    });
+    })
+    .catch((err) => console.err(`Ошибка ${err}`))
 }
 
   function handleCardDelete(card) {
@@ -32,6 +34,7 @@ function App() {
     .then(() => {
       setCards(cards.filter((item) => item._id !== card._id))
     })
+    .catch((err) => console.err(`Ошибка ${err}`))
   }
 
   useEffect(() => {
@@ -39,6 +42,7 @@ function App() {
     .then((userData) => {
       setCurrentUser(userData);
     })
+    .catch((err) => console.err(`Ошибка ${err}`))
   }, [])
 
   useEffect(() => {
@@ -46,6 +50,7 @@ function App() {
     .then((dataCards) => {
       setCards(dataCards);
     })
+    .catch((err) => console.err(`Ошибка ${err}`))
   }, [])
 
 // Да и поэтому у меня тут какая-то каша из name(ов), расскажите что происходит вообще... В теории такого не припоминаю
@@ -55,6 +60,7 @@ function App() {
       setCurrentUser(userData)
       closeAllPopups()
     })
+    .catch((err) => console.err(`Ошибка ${err}`))
   }
 
   function handleUpdateAvatar(avatar) {
@@ -63,6 +69,7 @@ function App() {
       setCurrentUser(userData)
       closeAllPopups()
     })
+    .catch((err) => console.err(`Ошибка ${err}`))
   }
 
   function handleAddPlace(title) {
@@ -71,9 +78,8 @@ function App() {
       setCards([newCard, ...cards]);
       closeAllPopups();
     })
+    .catch((err) => console.err(`Ошибка ${err}`))
   }
-
-
 
   const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = React.useState(
     false
