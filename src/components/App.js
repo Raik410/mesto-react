@@ -2,7 +2,6 @@ import React from "react";
 import Header from "./Header";
 import Main from "./Main";
 import Footer from "./Footer";
-import PopupWithForm from "./PopupWithForm";
 import ImagePopup from "./ImagePopup";
 import { useEffect } from "react";
 import api from "../utils/Api";
@@ -13,7 +12,7 @@ import EditAvatarPopup from "./EditAvatarPopup";
 import AddPlacePopup from "./AddPlacePopup";
 
 function App() {
-  const [currentUser, setCurrentUser] = React.useState([]);
+  const [currentUser, setCurrentUser] = React.useState({});
   const [cards, setCards] = React.useState([]);
 
 
@@ -32,7 +31,7 @@ function App() {
   function handleCardDelete(card) {
     api.deleteCard(card._id)
     .then(() => {
-      setCards(cards.filter((item) => item._id !== card._id))
+      setCards((state) => state.filter((item) => item._id !== card._id))
     })
     .catch((err) => console.err(`Ошибка ${err}`))
   }
@@ -76,7 +75,7 @@ function App() {
     api.addCard(title.title, title.link)
     .then((newCard) => {
       setCards([newCard, ...cards]);
-      closeAllPopups();
+      closeAllPopups()
     })
     .catch((err) => console.err(`Ошибка ${err}`))
   }
@@ -131,7 +130,7 @@ function App() {
       />
       <Footer />
       <EditAvatarPopup isOpen={isEditAvatarPopupOpen} onClose={closeAllPopups} onUpdateAvatar={handleUpdateAvatar}/>
-      <AddPlacePopup isOpen={isAddPlacePopupOpen} onClose={closeAllPopups} onAddCard={handleAddPlace} />
+      <AddPlacePopup isOpen={isAddPlacePopupOpen} onClose={closeAllPopups} onAddCard={handleAddPlace}/>
       <EditProfilePopup isOpen={isEditProfilePopupOpen} onClose={closeAllPopups} onUpdateUser={handleUpdateUser} />
       <ImagePopup card={selectedCard} onClose={closeAllPopups} />
     </div>

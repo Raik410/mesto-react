@@ -23,6 +23,11 @@ function AddPlacePopup({ onClose, isOpen, onAddCard }) {
     });
   }
 
+  React.useEffect(() => {
+    setTitle('');
+    setLink('');
+  }, [isOpen]);
+
   return (
     <PopupWithForm
       name="-image"
@@ -44,6 +49,7 @@ function AddPlacePopup({ onClose, isOpen, onAddCard }) {
             required
             id="card-name-input"
             onChange={handleChangeTitle}
+            value={title || ''}
           />
           <span className="popup__input-error card-name-input-error"></span>
           <input
@@ -54,6 +60,7 @@ function AddPlacePopup({ onClose, isOpen, onAddCard }) {
             required
             id="url-input"
             onChange={handleChangeLink}
+            value={link || ''}
           />
           <span className="popup__input-error url-input-error"></span>
         </>
