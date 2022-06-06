@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/mesto-react/static/css/main.99f2cc25.css",
+    "main.js": "/mesto-react/static/js/main.fce1e6ae.js",
+    "static/js/787.5530211c.chunk.js": "/mesto-react/static/js/787.5530211c.chunk.js",
+    "static/media/Inter-Medium.woff?v=3.19": "/mesto-react/static/media/Inter-Medium.9053572c46aeb4b16caa.woff",
+    "static/media/Inter-Black.woff?v=3.19": "/mesto-react/static/media/Inter-Black.c6938660eec019fefd68.woff",
+    "static/media/Inter-Regular.woff?v=3.19": "/mesto-react/static/media/Inter-Regular.8c206db99195777c6769.woff",
+    "static/media/Inter-Medium.woff2?v=3.19": "/mesto-react/static/media/Inter-Medium.293fd13dbca5a3e450ef.woff2",
+    "static/media/Inter-Black.woff2?v=3.19": "/mesto-react/static/media/Inter-Black.15ca31c0a2a68f76d2d1.woff2",
+    "static/media/Inter-Regular.woff2?v=3.19": "/mesto-react/static/media/Inter-Regular.c8ba52b05a9ef10f4758.woff2",
+    "static/media/LogoMobile.svg": "/mesto-react/static/media/LogoMobile.abb64ac93f95638a2598.svg",
+    "static/media/Logo.svg": "/mesto-react/static/media/Logo.e1792cd1bf55c68d1538.svg",
+    "static/media/HeartOff.svg": "/mesto-react/static/media/HeartOff.7913ddfd147a48616b09.svg",
+    "index.html": "/mesto-react/index.html",
+    "static/media/TrashButton.svg": "/mesto-react/static/media/TrashButton.823b0cf1b0b7e9cb7cad.svg",
+    "static/media/HeartOn.svg": "/mesto-react/static/media/HeartOn.fe17a515669479b1e649.svg",
+    "static/media/ButtonOpenPopupAddMobile.svg": "/mesto-react/static/media/ButtonOpenPopupAddMobile.6f86ece55e54220c5485.svg",
+    "static/media/ButtonOpenPopupAdd.svg": "/mesto-react/static/media/ButtonOpenPopupAdd.6f41966c71dd7895857f.svg",
+    "static/media/EditButton.svg": "/mesto-react/static/media/EditButton.a1892ea72cb87c8fc3aa.svg",
+    "static/media/AvatarHover.svg": "/mesto-react/static/media/AvatarHover.a086f758840ae814ecde.svg",
+    "static/media/CloseIcon.svg": "/mesto-react/static/media/CloseIcon.2ceb783afbab75916ddc.svg",
+    "static/media/BorderButtonAdd.svg": "/mesto-react/static/media/BorderButtonAdd.60c2db935f4150ea43f0.svg",
+    "static/media/BorderButtonAddDesc.svg": "/mesto-react/static/media/BorderButtonAddDesc.8c213ce02f24137abaeb.svg",
+    "main.99f2cc25.css.map": "/mesto-react/static/css/main.99f2cc25.css.map",
+    "main.fce1e6ae.js.map": "/mesto-react/static/js/main.fce1e6ae.js.map",
+    "787.5530211c.chunk.js.map": "/mesto-react/static/js/787.5530211c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.99f2cc25.css",
+    "static/js/main.fce1e6ae.js"
+  ]
+}
